@@ -3,8 +3,9 @@
 ## Member
 - 氏名: Tatty
   - 好きなメソッド: map
-- 氏名: コンフリクト大明神
-  - 好きなメソッド: allow_any_instance_of
+- 氏名: サッシュン
+  - 好きなメソッド: gets
+
 
 
 
