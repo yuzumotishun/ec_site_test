@@ -3,10 +3,10 @@
 ## Member
 - 氏名: Tatty
   - 好きなメソッド: map
+- 氏名: ハマベ
+  - 好きなメソッド: each
 - 氏名: サッシュン
   - 好きなメソッド: gets
-
-
 
 
 ---
@@ -118,4 +118,3 @@ Done in 366.80s.
 $ docker-compose up
 ```
 [[この問題についての詳細]](https://qiita.com/yama_ryoji/items/1de1f2e9e206382c4aa5)
-
