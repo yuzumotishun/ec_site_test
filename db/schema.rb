@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_124039) do
     t.string "apartments", limit: 32
     t.string "email", limit: 128
     t.string "phone_number", limit: 16
-    t.bigint "user_classification_id"
+    t.bigint "user_classification_id", null: false
     t.string "company_name", limit: 128
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
