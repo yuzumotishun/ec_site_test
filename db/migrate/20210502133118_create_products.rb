@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :description, limit: 256
       t.references :sale_status, null: false, foreign_key: true
       t.references :product_status, null: false, foreign_key: true
-      t.timestamp :regist_date
+      t.datetime :regist_date
       t.references :user, null: false, foreign_key: true
       t.boolean :delete_flag
 
