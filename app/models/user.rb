@@ -1,11 +1,11 @@
 class User < ApplicationRecord
 
-    #ハイフンなし、7桁の整数
+    #ハイフンあり、7桁の整数
     VALID_ZIPCODE_REGEX = /\A\d{3}[-]\d{4}\z/
     #メールアドレス
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    #電話番号 ハイフンなし、10桁 または 11桁の整数
-    VALID_PHONE_REGEX = /\A0\d{1,4}-\d{1,4}-\d{3,4}\z/
+    #電話番号 ハイフンあり、整数
+    VALID_PHONE_REGEX = /\A[0-9-]+\z/
 
     validates :first_name, presence: true, length: { maximum: 10 }
     validates :last_name, presence: true, length: { maximum: 10 }
