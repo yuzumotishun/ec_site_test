@@ -21,6 +21,7 @@ user1 = User.create!(
     email: "user1@example.com", 
     password: "password", 
     user_classification_id: 1, 
+    delete_flag: false
     )
 
 user2 = User.create!(
@@ -36,5 +37,6 @@ user2 = User.create!(
     email: "user2@example.com", 
     password: "password", 
     user_classification_id: 1, 
+    delete_flag: false
     )
 
