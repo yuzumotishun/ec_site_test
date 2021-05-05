@@ -1,8 +1,11 @@
 ##########################################
+# UserClassificationの作成
+##########################################
+user_classification1 = UserClassification.create!(user_classification_name: "購入者")
+user_classification2 = UserClassification.create!(user_classification_name: "販売者")
+##########################################
 # User関連の作成
 ##########################################
-UserClassification.create!(user_classification_name: "購入者")
-
 user1 = User.create!(
     last_name: "山田",
     first_name: "太郎",
@@ -15,10 +18,9 @@ user1 = User.create!(
     company_name: "有限会社 山田",
     email: "user1@example.com",
     password: "password",
-    user_classification_id: 1,
+    user_classification_id: user_classification1.id,
     delete_flag: false
-    )
-
+)
 user2 = User.create!(
     last_name: "田中",
     first_name: "二郎",
@@ -31,38 +33,27 @@ user2 = User.create!(
     company_name: "有限会社 田中",
     email: "user2@example.com",
     password: "password",
-    user_classification_id: 1,
+    user_classification_id: user_classification2.id,
     delete_flag: false
-    )
-
-
+)
 ##########################################
-# Product関連の作成
+# Productの作成
 ##########################################
-category1 = Category.create!(
-  category_name: "食料品"
-)
-
-category2 = Category.create!(
-  category_name: "生活雑貨"
-)
-
-sale_status1 = SaleStatus.create!(
-  sale_status_name: "20% OFF"
-)
-
-sale_status2 = SaleStatus.create!(
-  sale_status_name: "40% OFF"
-)
-
-product_status1 = ProductStatus.create!(
-  product_status_name: "準備中"
-)
-
-product_status2 = ProductStatus.create!(
-  product_status_name: "出荷"
-)
-
+category1 = Category.create!(category_name: "食料品")
+category2 = Category.create!(category_name: "生活雑貨")
+##########################################
+# SaleStatusの作成
+##########################################
+sale_status1 = SaleStatus.create!(sale_status_name: "20% OFF")
+sale_status2 = SaleStatus.create!(sale_status_name: "40% OFF")
+##########################################
+# ProductStatusの作成
+##########################################
+product_status1 = ProductStatus.create!(product_status_name: "準備中")
+product_status2 = ProductStatus.create!(product_status_name: "出荷")
+##########################################
+# Productの作成
+##########################################
 product1 = Product.create!(
   product_name: "りんご",
   price: 110,
@@ -70,29 +61,63 @@ product1 = Product.create!(
   delete_flag: false,
   category_id: category1.id,
   sale_status_id: sale_status1.id,
-  product_status_id: product_status1.id
+  product_status_id: product_status1.id,
+  user_id: user1.id
 )
-
 product2 = Product.create!(
+  product_name: "食パン",
+  price: 320,
+  description: "高級食パンです",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user1.id
+)
+product3 = Product.create!(
   product_name: "ティッシュペーパー",
   price: 300,
   description: "400枚入り × 4箱です。",
   delete_flag: false,
   category_id: category2.id,
   sale_status_id: sale_status2.id,
-  product_status_id: product_status2.id
+  product_status_id: product_status2.id,
+  user_id: user2.id
 )
-
+product4 = Product.create!(
+  product_name: "タオル",
+  price: 2980,
+  description: "すぐ乾く！速乾タオルです。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id
+)
+##########################################
+# Purchaseの作成
+##########################################
 purchase1 = Purchase.create!(
   purchase_price: 330,
   purchase_quantity: 3,
   purchase_company: "青菜社",
   product_id: product1.id
 )
-
 purchase2 = Purchase.create!(
   purchase_price: 600,
   purchase_quantity: 2,
-  purchase_company: "紙箱社",
+  purchase_company: "スーパーばんや",
   product_id: product2.id
+)
+purchase3 = Purchase.create!(
+  purchase_price: 330,
+  purchase_quantity: 3,
+  purchase_company: "青菜社",
+  product_id: product3.id
+)
+purchase4 = Purchase.create!(
+  purchase_price: 600,
+  purchase_quantity: 2,
+  purchase_company: "スーパーばんや",
+  product_id: product4.id
 )
