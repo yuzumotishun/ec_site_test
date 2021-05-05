@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  belongs_to :user_classification
+  has_secure_password
 
     #ハイフンあり、7桁の整数
     VALID_ZIPCODE_REGEX = /\A\d{3}[-]\d{4}\z/
