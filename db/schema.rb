@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_133209) do
+ActiveRecord::Schema.define(version: 2021_05_04_063833) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "category_name", limit: 32
@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 2021_05_02_133209) do
     t.bigint "sale_status_id", null: false
     t.bigint "product_status_id", null: false
     t.datetime "regist_date"
+    t.bigint "user_id", null: false
     t.boolean "delete_flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_status_id"], name: "index_products_on_product_status_id"
     t.index ["sale_status_id"], name: "index_products_on_sale_status_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -65,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_133209) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "password", limit: 64
+    t.string "password_digest", limit: 64
     t.string "last_name", limit: 16
     t.string "first_name", limit: 16
     t.string "zipcode", limit: 16
@@ -86,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_133209) do
   add_foreign_key "products", "categories"
   add_foreign_key "products", "product_statuses"
   add_foreign_key "products", "sale_statuses"
+  add_foreign_key "products", "users"
   add_foreign_key "purchases", "products"
   add_foreign_key "users", "user_classifications"
 end
