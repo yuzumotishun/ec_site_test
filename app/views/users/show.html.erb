@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <title>私立探求学園Rails共同開発2期</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        /* フッターをウィンドウの最下部に常に表示させるために */
+        flex-flow: column;
+        /* flexboxのみだと横並びに。これで縦並び */
+        min-height: 100vh;
+        /* body全体の表示領域を確保・指定 */
+        font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ,
+          Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, sans-serif;
+      }
+      header {
+        background-color: #ffe040;
+        z-index: 10;
+        /* 要素の重なり順序指定 */
+      }
+      header h1 {
+        font-weight: bold;
+      }
+      header a {
+        font-weight: bold;
+        padding-left: 8px;
+      }
+      header p {
+        text-align: right;
+      }
+      header li {
+        list-style: none;
+      }
+      main {
+        background: #ffffff;
+        flex: 1;
+        /* header footerの高さを除いた、残りの部分がmainで埋まる */
+      }
+      footer {
+        width: 100%;
+        background-color: #ffe040;
+        position: absolute;
+        bottom: 0;
+      }
+      footer h1 {
+        font-size: 15px;
+        font-weight: bold;
+        margin: 8px 5px;
+      }
+      footer p {
+        text-align: right;
+        font-weight: lighter;
+        margin: 0 auto;
+      }
+
+      .table td {
+        border: none;
+      }
+
+      .container {
+        margin-left: 35em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-nav mr-auto">
+          <h1><a class="navbar-brand" href="#">私立探求学園Rails共同開発2期</a></h1>
+        </div>
+        <div>
+          <ul>
+            <p>〇〇 ××さん</p>
+          </ul>
+          <ul class="navbar-nav">
+            <a class="text-dark" href="#">商品検索</a>
+            <a class="text-dark" href="#">カート</a>
+            <a class="text-dark" href="#">注文履歴</a>
+            <a class="text-dark" href="#">ユーザ情報</a>
+            <a class="text-dark" href="#">ログアウト</a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+
+      <section class="text-center pt-5 pb-2">
+        <h2 class="mb-4">ユーザ情報</h2>
+        <div class="container">
+          <table class="table">
+            <tbody>
+              <tr><td class="text-center" style="width:20%">ユーザID</td><td style="width:80%"><%= @user.id %></td></tr>
+              <tr><td class="text-center">氏名</td><td><%= @user.last_name %><%= @user.first_name %></td></tr>
+              <tr><td class="text-center">住所</td><td><%= "〒"+@user.zipcode %><br>
+                <%= @user.prefecture %><%= @user.municipality %><%= @user.address %><%= @user.apartments %></td></tr>
+              <tr><td class="text-center">電話番号</td><td><%= @user.phone_number %><br>
+              <tr><td class="text-center">メールアドレス</td><td><%= @user.email %><br>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    <div class="text-center">
+      <a class="btn btn-primary" href="#" role="button">修正/退会する</a>
+    </div>
+
+    </main>
+    <footer>
+      <h1>私立探求学園Rails共同開発2期</h1>
+      <p>© 2020 QuestAcademia, All rights reserved</p>
+    </footer>
+
+  </body>
+</html>
