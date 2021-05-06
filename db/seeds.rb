@@ -3,7 +3,7 @@ UserClassification.create!(user_classification_name: "購入者")
 user1 = User.create!(
   last_name: "山田",
   first_name: "太郎",
-  zipcode: "1234567",
+  zipcode: "123-4567",
   prefecture: "北海道",
   municipality: "札幌市",
   address: "時計台3-2-1",
@@ -19,7 +19,7 @@ user1 = User.create!(
 user2 = User.create!(
   last_name: "田中",
   first_name: "二郎",
-  zipcode: "2345678",
+  zipcode: "234-5678",
   prefecture: "青森県",
   municipality: "青森市",
   address: "りんご3-2-1",
