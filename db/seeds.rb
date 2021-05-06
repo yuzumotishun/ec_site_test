@@ -7,34 +7,34 @@ user_classification2 = UserClassification.create!(user_classification_name: "販
 # User関連の作成
 ##########################################
 user1 = User.create!(
-    last_name: "山田",
-    first_name: "太郎",
-    zipcode: "123-4567",
-    prefecture: "北海道",
-    municipality: "札幌市",
-    address: "時計台3-2-1",
-    apartments: "旅行したい101",
-    phone_number: "08012345678",
-    company_name: "有限会社 山田",
-    email: "user1@example.com",
-    password: "password",
-    user_classification_id: user_classification1.id,
-    delete_flag: false
+  last_name: "山田",
+  first_name: "太郎",
+  zipcode: "123-4567",
+  prefecture: "北海道",
+  municipality: "札幌市",
+  address: "時計台3-2-1",
+  apartments: "旅行したい101",
+  phone_number: "08012345678",
+  company_name: "有限会社 山田",
+  email: "user1@example.com",
+  password: "password",
+  user_classification_id: user_classification1.id,
+  delete_flag: false,
 )
 user2 = User.create!(
-    last_name: "田中",
-    first_name: "二郎",
-    zipcode: "234-5678",
-    prefecture: "青森県",
-    municipality: "青森市",
-    address: "りんご3-2-1",
-    apartments: "旅行したい102",
-    phone_number: "08023456789",
-    company_name: "有限会社 田中",
-    email: "user2@example.com",
-    password: "password",
-    user_classification_id: user_classification2.id,
-    delete_flag: false
+  last_name: "田中",
+  first_name: "二郎",
+  zipcode: "234-5678",
+  prefecture: "青森県",
+  municipality: "青森市",
+  address: "りんご3-2-1",
+  apartments: "旅行したい102",
+  phone_number: "08023456789",
+  company_name: "有限会社 田中",
+  email: "user2@example.com",
+  password: "password",
+  user_classification_id: user_classification2.id,
+  delete_flag: false,
 )
 ##########################################
 # Productの作成
@@ -62,7 +62,7 @@ product1 = Product.create!(
   category_id: category1.id,
   sale_status_id: sale_status1.id,
   product_status_id: product_status1.id,
-  user_id: user1.id
+  user_id: user1.id,
 )
 product2 = Product.create!(
   product_name: "食パン",
@@ -72,7 +72,7 @@ product2 = Product.create!(
   category_id: category1.id,
   sale_status_id: sale_status1.id,
   product_status_id: product_status1.id,
-  user_id: user1.id
+  user_id: user1.id,
 )
 product3 = Product.create!(
   product_name: "ティッシュペーパー",
@@ -82,7 +82,7 @@ product3 = Product.create!(
   category_id: category2.id,
   sale_status_id: sale_status2.id,
   product_status_id: product_status2.id,
-  user_id: user2.id
+  user_id: user2.id,
 )
 product4 = Product.create!(
   product_name: "タオル",
@@ -92,32 +92,32 @@ product4 = Product.create!(
   category_id: category2.id,
   sale_status_id: sale_status2.id,
   product_status_id: product_status2.id,
-  user_id: user2.id
+  user_id: user2.id,
 )
 ##########################################
 # Purchaseの作成
 ##########################################
-purchase1 = Purchase.create!(
+Purchase.create!(
   purchase_price: 330,
   purchase_quantity: 3,
   purchase_company: "青菜社",
-  product_id: product1.id
+  product_id: product1.id,
 )
-purchase2 = Purchase.create!(
+Purchase.create!(
   purchase_price: 600,
   purchase_quantity: 2,
   purchase_company: "スーパーばんや",
-  product_id: product2.id
+  product_id: product2.id,
 )
-purchase3 = Purchase.create!(
+Purchase.create!(
   purchase_price: 330,
   purchase_quantity: 3,
   purchase_company: "青菜社",
-  product_id: product3.id
+  product_id: product3.id,
 )
-purchase4 = Purchase.create!(
+Purchase.create!(
   purchase_price: 600,
   purchase_quantity: 2,
   purchase_company: "スーパーばんや",
-  product_id: product4.id
+  product_id: product4.id,
 )
