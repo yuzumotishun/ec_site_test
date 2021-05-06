@@ -102,12 +102,12 @@
         <div class="container">
           <table class="table">
             <tbody>
-              <tr><td class="text-center" style="width:20%">ユーザID</td><td style="width:80%"><%= "#{@user.id}" %></td></tr>
-              <tr><td class="text-center">氏名</td><td><%= "#{@user.last_name}" %><%= "#{@user.first_name}" %></td></tr>
+              <tr><td class="text-center" style="width:20%">ユーザID</td><td style="width:80%"><%= @user.id %></td></tr>
+              <tr><td class="text-center">氏名</td><td><%= @user.last_name %><%= @user.first_name %></td></tr>
               <tr><td class="text-center">住所</td><td><%= "〒#{@user.zipcode}" %><br>
-                <%= @user.prefecture %><%= "#{@user.municipality}" %><%= "#{@user.address}" %><%= "#{@user.apartments}" %></td></tr>
-              <tr><td class="text-center">電話番号</td><td><%= "#{@user.phone_number}" %><br>
-              <tr><td class="text-center">メールアドレス</td><td><%= "#{@user.email}" %><br>
+                <%= @user.prefecture %><%= @user.municipality %><%= @user.address %><%= @user.apartments %></td></tr>
+              <tr><td class="text-center">電話番号</td><td><%= @user.phone_number %><br>
+              <tr><td class="text-center">メールアドレス</td><td><%= @user.email %><br>
             </tbody>
           </table>
         </div>
