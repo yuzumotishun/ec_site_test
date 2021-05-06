@@ -3,11 +3,11 @@ class User < ApplicationRecord
   has_secure_password
 
   # ハイフンあり、7桁の整数
-  VALID_ZIPCODE_REGEX = /\A\d{3}-\d{4}\z/
+  VALID_ZIPCODE_REGEX = /\A\d{3}-\d{4}\z/.freeze
   # メールアドレス
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   # 電話番号 ハイフンあり、整数
-  VALID_PHONE_REGEX = /\A[0-9-]+\z/
+  VALID_PHONE_REGEX = /\A[0-9-]+\z/.freeze
 
   validates :first_name, presence: true, length: { maximum: 10 }
   validates :last_name, presence: true, length: { maximum: 10 }
@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { maximum: 15 }, format: { with: VALID_PHONE_REGEX }
   validates :password, presence: true, length: { minimum: 6, maximum: 15 }
 
+  has_many :products, dependent: :destroy
   belongs_to :user_classification
   has_secure_password
 end
