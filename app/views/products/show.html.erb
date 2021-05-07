@@ -1,45 +1,56 @@
-<header>
-  <div class="header-flex">
-    <h1 class="header-title"><a href="#">探求学園Rails専攻</a></h1>
-    <div id="login-user">〇〇 ××さん</div>
-    <ul id="header-nav">
-      <li class="nav-item"><a href="#">商品検索</a></li>
-      <li class="nav-item"><a href="#">カート</a></li>
-      <li class="nav-item"><a href="#">注文履歴</a></li>
-      <li class="nav-item"><a href="#">ユーザ情報</a></li>
-      <li class="nav-item"><a href="#">ログアウト</a></li>
-    </ul>
-  </div>
-</header>
+<div class="products-show">
+  <section class="header">
+    <div class="header-flex">
+      <h1 class="header-title"><a href="#">探求学園Rails専攻</a></h1>
+      <div id="login-user">〇〇 ××さん</div>
+      <ul id="header-nav">
+        <li class="nav-item"><a href="#">商品検索</a></li>
+        <li class="nav-item"><a href="#">カート</a></li>
+        <li class="nav-item"><a href="#">注文履歴</a></li>
+        <li class="nav-item"><a href="#">ユーザ情報</a></li>
+        <li class="nav-item"><a href="#">ログアウト</a></li>
+      </ul>
+    </div>
+  </section>
 
-<section>
-  <div class="product-detail">
-    <div class="product-infomation">
-      <h2 class="info">商品情報</h2>
-      <div class="name">商品1</div>
-      <div class="category">商品カテゴリ：食料品</div>
-    </div>
-    <div class="product-description">
-      <div class="desc">商品説明</div>
-      <div class="desc-body">探求学園Rails専攻限定商品！</div>
-    </div>
-    <div class="product-price">
-      <div class="price">価格 : <span>500円</span></div>
-    </div>
-    <form class="product-purchase">
-      <div class="pur-number-box">
-        購入個数
-        <input class="pur-number">
-        個
+  <% if @product %>
+  <section>
+    <div class="product-detail">
+      <div class="product-infomation">
+        <h2 class="info">商品情報</h2>
+        <div class="name">商品1</div>
+        <div class="category">商品カテゴリ：食料品</div>
       </div>
-      <button class="cart-button">カート</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-flex">
-    <h1 class="footer-title"><a href="#">探求学園Rails専攻</a></h1>
-    <div class="footer-copylight">©2020 QuestAcademia, All rights reserved</div>
-  </div>
-</footer>
+      <div class="product-description">
+        <div class="desc">商品説明</div>
+        <div class="desc-body">探求学園Rails専攻限定商品！</div>
+      </div>
+      <div class="product-price">
+        <div class="price">価格 : <span>500円</span></div>
+      </div>
+      <form class="product-purchase">
+        <div class="pur-number-box">
+          購入個数
+          <input class="pur-number">
+          個
+        </div>
+        <button class="cart-button">カート</button>
+      </form>
+    </div>
+  </section>
+  <% else %>
+  <section>
+    <div class="not-find-box" style="text-align: center;">
+      <div class="nf-message">該当商品が見つかりませんでした…</div>
+      <div class="nf-sub-message">商品検索画面に戻り、やり直してください</div>
+      <button class="product-seach-button"><a href="#">商品検索画面</button>
+    </div>
+  </section>
+  <% end %>
+  <footer>
+    <div class="footer-flex">
+      <h1 class="footer-title"><a href="#">探求学園Rails専攻</a></h1>
+      <div class="footer-copylight">©2020 QuestAcademia, All rights reserved</div>
+    </div>
+  </footer>
+</div>
