@@ -108,3 +108,24 @@ footer {
   margin-top: auto;
   margin-left: auto;
 }
+// ####### not_find #######
+// ####### not-find-box ######
+.not-find-box {
+  .nf-message {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  .nf-sub-message {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .product-seach-button {
+    background-color: rgb(68, 115, 196);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    a {
+      color: #ffffff;
+    }
+  }
+}
