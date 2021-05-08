@@ -2,7 +2,7 @@
   <section class="header">
     <div class="header-flex">
       <h1 class="header-title"><a href="#">探求学園Rails専攻</a></h1>
-      <div id="login-user">〇〇 ××さん</div>
+      <div id="login-user"><%= @user.last_name %> <%= @user.first_name %> さん</div>
       <ul id="header-nav">
         <li class="nav-item"><a href="#">商品検索</a></li>
         <li class="nav-item"><a href="#">カート</a></li>
@@ -13,20 +13,20 @@
     </div>
   </section>
 
-  <% if @product %>
+  <% if @product_find_check %>
   <section>
     <div class="product-detail">
       <div class="product-infomation">
         <h2 class="info">商品情報</h2>
-        <div class="name">商品1</div>
-        <div class="category">商品カテゴリ：食料品</div>
+        <div class="name"><%= @product.product_name %></div>
+        <div class="category">カテゴリ: <%= @product.category.category_name %></div>
       </div>
       <div class="product-description">
         <div class="desc">商品説明</div>
-        <div class="desc-body">探求学園Rails専攻限定商品！</div>
+        <div class="desc-body"><%= @product.description %></div>
       </div>
       <div class="product-price">
-        <div class="price">価格 : <span>500円</span></div>
+        <div class="price">価格 : <span><%= @product.price %>円</span></div>
       </div>
       <form class="product-purchase">
         <div class="pur-number-box">
