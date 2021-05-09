@@ -98,37 +98,74 @@
       <%= form_with model: @user do |form| %>
         <h2 class="text-center mt-5">ユーザ情報修正</h2>
 
-        <table width="50%" style="margin-left:450px">
+        <table width="60%" style="margin: auto;">
           <tr height="40">
-            <td align="center">氏名<span style="float: right">姓</span></td><td><input type="text" value="<%= @user.last_name %>" style="margin-left:10px" maxlength="10" required><span style="margin-right:35px"></span>名<input type="text"   value="<%= @user.first_name %>" style="margin-left:10px" maxlength="10" required></td>
+            <td align="center">氏名</td>
+            <td>
+            <%#### 姓 ####%>
+              <%= label_tag "last_name", "姓" %>
+              <%= text_field :users, :last_name, id:"last_name", value:@user.last_name %>
+            <%#### 名 ####%>
+              <%= label_tag "last_name", "名" %>
+              <%= text_field :users, :first_name, id:"last_name", value:@user.first_name %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="center">住所<span style="float: right">〒</span></td><td colspan="2"><input type="text"  value="<%= @user.zipcode %>" style="margin-left:10px" size="25" pattern="\d{3}-?\d{4}" required></td>
+            <td align="center">郵便番号</td>
+            <td>
+            <%#### 郵便番号 ####%>
+              <%= label_tag "zipcode", "〒" %>
+              <%= text_field :users, :first_name, id:"zipcode", value:@user.zipcode %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="right">都道府県</td><td colspan="2"><input type="text" value="<%= @user.prefecture %>" style="margin-left:10px" size="50" maxlength="5" required></td>
+          <%#### 都道府県 ####%>
+            <td align="center"><%= label_tag "prefecture", "都道府県" %></td>
+            <td>
+              <%= text_field :users, :prefecture, id:"prefecture", value:@user.prefecture, style:"width: 100%;" %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="right">市町村区</td><td colspan="2"><input type="text" value="<%= @user.municipality %>" style="margin-left:10px" size="50" maxlength="10" required></td>
+          <%#### 市区町村 ####%>
+            <td align="center"><%= label_tag "municipality", "市区町村" %></td>
+            <td colspan="2">
+              <%= text_field :users, :municipality, id:"municipality", value:@user.municipality, style:"width: 100%;" %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="right">番地</td><td colspan="2"><input type="text" value="<%= @user.address %>" style="margin-left:10px" size="50" maxlength="15" required></td>
+          <%#### 番地 ####%>
+            <td align="center"><%= label_tag "address", "番地" %></td>
+            <td>
+              <%= text_field :users, :address, id:"address", value:@user.address, style:"width: 100%;" %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="right">マンション<br>部屋番号</br></td><td colspan="2"><input type="text" value="<%= @user.apartments %>" style="margin-left:10px" size="50" maxlength="20" required></td>
+          <%#### マンション部屋番号 ####%>
+            <td align="center"><%= label_tag "apartments", "マンション部屋番号" %></td>
+            <td>
+              <%= text_field :users, :apartments, id:"apartments", value:@user.apartments, style:"width: 100%;" %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="center">メールアドレス</td><td colspan="2"><input type="email" value="<%= @user.email %>" style="margin-left:10px" size="65"></td>
+          <%#### メールアドレス ####%>
+            <td align="center"><%= label_tag "email", "メールアドレス" %></td>
+            <td>
+              <%= text_field :users, :email, id:"email", value:@user.email, style:"width: 100%;" %>
+            </td>
           </tr>
 
           <tr height="40">
-            <td align="center">電話番号</td><td colspan="2"><input type="text" value="<%= @user.phone_number %>" style="margin-left:10px" size="65" pattern="(^[0-9]+$){1,15}" required></td>
+          <%#### 電話番号 ####%>
+            <td align="center"><%= label_tag "phone_number", "電話番号" %></td>
+            <td>
+              <%= text_field :users, :phone_number, id:"phone_number", value:@user.phone_number, style:"width: 100%;" %>
+            </td>
           </tr>
         </table>
 
