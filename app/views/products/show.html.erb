@@ -1,8 +1,9 @@
+<%#### html共通化時に削除 ####　%>
 <div class="products-show">
   <section class="header">
     <div class="header-flex">
       <h1 class="header-title"><a href="#">探求学園Rails専攻</a></h1>
-      <div id="login-user"><%= @product.user.last_name %> <%= @product.user.first_name %> さん</div>
+      <div id="login-user">ログインユーザー さん</div>
       <ul id="header-nav">
         <li class="nav-item"><a href="#">商品検索</a></li>
         <li class="nav-item"><a href="#">カート</a></li>
@@ -12,8 +13,9 @@
       </ul>
     </div>
   </section>
+<%#### ここまで　####%>
 
-  <% if @product.present? %>
+  <% if @product %>
     <section>
       <div class="product-detail">
         <div class="product-infomation">
@@ -28,14 +30,17 @@
         <div class="product-price">
           <div class="price">価格 : <span><%= @product.price %>円</span></div>
         </div>
-        <form class="product-purchase">
+        <%##### 注文詳細画面が出来たら、url:を変更 #####%>
+        <%= form_with url: product_path, class: :product_purchase do |form| %>
           <div class="pur-number-box">
             購入個数
             <input class="pur-number">
             個
           </div>
-          <button class="cart-button">カート</button>
-        </form>
+          <button class="cart-button">
+            カート
+          </button>
+        <% end %>
       </div>
     </section>
   <% else %>
@@ -43,10 +48,17 @@
       <div class="not-find-box" style="text-align: center;">
         <div class="nf-message">該当商品が見つかりませんでした…</div>
         <div class="nf-sub-message">商品検索画面に戻り、やり直してください</div>
-        <button class="product-seach-button"><a href="#">商品検索画面</button>
+        <%##### 商品検索画面が出来たら、url:を変更 #####%>
+        <%= form_with url: product_path do |form| %>
+          <button class="product-seach-button">
+            商品検索画面
+          </button>
+        <% end %>
       </div>
     </section>
   <% end %>
+
+<%#### html共通化時に削除 ####　%>
   <footer>
     <div class="footer-flex">
       <h1 class="footer-title"><a href="#">探求学園Rails専攻</a></h1>
@@ -54,3 +66,4 @@
     </div>
   </footer>
 </div>
+<%#### ここまで　####%>
