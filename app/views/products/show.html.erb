@@ -1,0 +1,65 @@
+<%#### html共通化時に削除 ####　%>
+<div class="products-show">
+  <section class="header">
+    <div class="header-flex">
+      <h1 class="header-title"><a href="#">探求学園Rails専攻</a></h1>
+      <div id="login-user">ログインユーザー さん</div>
+      <ul id="header-nav">
+        <li class="nav-item"><a href="#">商品検索</a></li>
+        <li class="nav-item"><a href="#">カート</a></li>
+        <li class="nav-item"><a href="#">注文履歴</a></li>
+        <li class="nav-item"><a href="#">ユーザ情報</a></li>
+        <li class="nav-item"><a href="#">ログアウト</a></li>
+      </ul>
+    </div>
+  </section>
+<%#### ここまで　####%>
+
+  <% if @product %>
+    <section>
+      <div class="product-detail">
+        <div class="product-infomation">
+          <h2 class="info">商品情報</h2>
+          <div class="name"><%= @product.product_name %></div>
+          <div class="category">カテゴリ: <%= @product.category.category_name %></div>
+        </div>
+        <div class="product-description">
+          <div class="desc">商品説明</div>
+          <div class="desc-body"><%= @product.description %></div>
+        </div>
+        <div class="product-price">
+          <div class="price">価格 : <span><%= @product.price %>円</span></div>
+        </div>
+        <%#### 後でカートに商品情報を入れるというPOSTリクエストを飛ばすようにする ####%>
+        <form class="product-purchase">
+          <div class="pur-number-box">
+            購入個数
+            <input class="pur-number">
+            個
+          <button class="cart-button">
+            カート
+          </button>
+        </form>
+        <%#### ここまで ####%>
+      </div>
+    </section>
+  <% else %>
+    <section>
+      <div class="not-find-box" style="text-align: center;">
+        <div class="nf-message">該当商品が見つかりませんでした…</div>
+        <div class="nf-sub-message">商品検索画面に戻り、やり直してください</div>
+        <%##### 商品検索画面が出来たら、product_pathを変更 #####%>
+        <%= link_to "商品検索画面" product_path, class: "product-search-button" %>
+      </div>
+    </section>
+  <% end %>
+
+<%#### html共通化時に削除 ####　%>
+  <footer>
+    <div class="footer-flex">
+      <h1 class="footer-title"><a href="#">探求学園Rails専攻</a></h1>
+      <div class="footer-copylight">©2020 QuestAcademia, All rights reserved</div>
+    </div>
+  </footer>
+</div>
+<%#### ここまで　####%>
