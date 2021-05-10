@@ -117,10 +117,8 @@ sans-serif;
       <tr height="40">
         <td align="center">氏名</td>
         <td>
-          <%#### 姓 ####%>
           <%= form.label :last_name, "姓" %>
           <%= form.text_field :last_name, value:@user.last_name %>
-          <%#### 名 ####%>
           <%= form.label :first_name, "名" %>
           <%= form.text_field :first_name, value:@user.first_name %>
         </td>
@@ -129,14 +127,12 @@ sans-serif;
       <tr height="40">
         <td align="center">郵便番号</td>
         <td>
-          <%#### 郵便番号 ####%>
           <%= form.label :zipcode, "〒" %>
           <%= form.text_field :zipcode, value:@user.zipcode %>
         </td>
       </tr>
 
       <tr height="40">
-        <%#### 都道府県 ####%>
         <td align="center"><%= form.label :prefecture, "都道府県" %></td>
         <td>
           <%= form.text_field :prefecture, value:@user.prefecture, style:"width: 100%;" %>
@@ -144,7 +140,6 @@ sans-serif;
       </tr>
 
       <tr height="40">
-        <%#### 市区町村 ####%>
         <td align="center"><%= form.label :municipality, "市区町村" %></td>
         <td colspan="2">
           <%= form.text_field :municipality, value:@user.municipality, style:"width: 100%;" %>
@@ -152,7 +147,6 @@ sans-serif;
       </tr>
 
       <tr height="40">
-        <%#### 番地 ####%>
         <td align="center"><%= form.label :address, "番地" %></td>
         <td>
           <%= form.text_field :address, value:@user.address, style:"width: 100%;" %>
@@ -160,7 +154,6 @@ sans-serif;
       </tr>
 
       <tr height="40">
-        <%#### マンション部屋番号 ####%>
         <td align="center"><%= form.label :apartments, "マンション部屋番号" %></td>
         <td>
           <%= form.text_field :apartments, value:@user.apartments, style:"width: 100%;" %>
@@ -168,7 +161,6 @@ sans-serif;
       </tr>
 
       <tr height="40">
-        <%#### メールアドレス ####%>
         <td align="center"><%= form.label :email, "メールアドレス" %></td>
         <td>
           <%= form.text_field :email, value:@user.email, style:"width: 100%;" %>
@@ -176,7 +168,6 @@ sans-serif;
       </tr>
 
       <tr height="40">
-        <%#### 電話番号 ####%>
         <td align="center"><%= form.label :phone_number, "電話番号" %></td>
         <td>
           <%= form.text_field :phone_number, value:@user.phone_number, style:"width: 100%;" %>
