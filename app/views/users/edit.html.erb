@@ -1,15 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
-  <title>やんばる共同開発 MockUp ログイン後</title>
-</head>
-
-<body>
-  <main>
-    <%= form_with model: @user do |form| %>
+<main>
+  <%= form_with model: @user do |form| %>
     <h2 class="text-center mt-5">ユーザ情報修正</h2>
 
     <table width="60%" style="margin: auto;">
@@ -85,8 +75,5 @@
         <button class="btn btn-danger" type="submit">退会</button>
       </div>
     </div>
-    <% end %>
-  </main>
-</body>
-
-</html>
+  <% end %>
+</main>
