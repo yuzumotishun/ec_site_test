@@ -5,110 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
   <title>やんばる共同開発 MockUp ログイン後</title>
-  <%#### html共通化時に削除 ####%>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      display: flex;
-      /*フッターをウィンドウの最下部に常に表示させるために */
-      flex-flow: column;
-      /*flexboxのみだと横並びに。これで縦並び */
-      position: relative;
-      /*←相対位置*/
-      padding-top: 70px;
-      /*←headerの高さ*/
-      padding-bottom: 70px;
-      /*←footerの高さ*/
-      box-sizing: border-box;
-      /*←全て含めてmin-height:100vhにbody全体の表示領域を確保・指定*/
-      font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ,
-        Meiryo, "ＭＳ Ｐゴシック", "Helvetica
-Neue", Helvetica,
-sans-serif;
-    }
-
-    header {
-      background-color: #ffe040;
-      z-index: 10;
-      /* 要素の重なり順序指定 */
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-
-    header h1 {
-      font-weight: bold;
-    }
-
-    header a {
-      font-weight: bold;
-      padding-left: 8px;
-    }
-
-    header p {
-      text-align: right;
-    }
-
-    header li {
-      list-style: none;
-    }
-
-    main {
-      background: #ffffff;
-      flex: 1;
-      /*header footerの高さを除いた、残りの部分がmainで埋まる */
-    }
-
-    footer {
-      width: 100%;
-      background-color: #ffe040;
-      position: absolute;
-      /*←絶対位置*/
-      bottom: 0;
-      /*下に固定*/
-    }
-
-    footer h1 {
-      font-size: 15px;
-      font-weight: bold;
-      margin: 8px 5px;
-    }
-
-    footer p {
-      text-align: right;
-      font-weight: lighter;
-      margin: 0 auto;
-    }
-  </style>
-  <%#### ここまで ####%>
 </head>
 
 <body>
-  <%#### html共通化時に削除 ####%>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="navbar-nav mr-auto">
-        <h1><a class="navbar-brand" href="#">やんばるエキスパート</a></h1>
-      </div>
-      <div>
-        <ul>
-          <p>〇〇 ××さん</p>
-        </ul>
-        <ul class="navbar-nav">
-          <a class="text-dark" href="#">商品検索</a>
-          <a class="text-dark" href="#">カート</a>
-          <a class="text-dark" href="#">注文履歴</a>
-          <a class="text-dark" href="#">ユーザ情報</a>
-          <a class="text-dark" href="#">ログアウト</a>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <%#### ここまで ####%>
   <main>
     <%= form_with model: @user do |form| %>
     <h2 class="text-center mt-5">ユーザ情報修正</h2>
@@ -188,12 +87,6 @@ sans-serif;
     </div>
     <% end %>
   </main>
-
-  <%#### html共通化時に削除 ####%>
-  <footer>
-    <h1>やんばるエキスパート</h1>
-    <p>© 2020 QuestAcademia, All rights reserved</p>
-  </footer>
-  <%#### ここまで ####%>
 </body>
+
 </html>
