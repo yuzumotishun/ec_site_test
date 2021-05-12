@@ -9,8 +9,13 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user.id)
+    binding.pry
+    if user.update(user_params)
+      redirect_to user_path(user), notice: "ユーザー情報を更新しました。"
+    else
+      binding.pry
+      redirect_to edit_user_path(user), alert: "ユーザー情報を更新できませんでした。"
+    end
   end
 
   private

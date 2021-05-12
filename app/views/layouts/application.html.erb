@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <%#### headerより下に配置したい ####%>
+    <% if flash[:notice] %>
+      <div class="notification alert alert-success">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notification alert alert-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
