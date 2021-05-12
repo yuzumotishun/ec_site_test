@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, length: { maximum: 15 }, format: { with: VALID_PHONE_REGEX }
   validates :password, presence: true, length: { minimum: 6, maximum: 15 }
 
+  has_many :products, dependent: :destroy
   belongs_to :user_classification
   has_secure_password
 end
