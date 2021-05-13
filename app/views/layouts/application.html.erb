@@ -13,19 +13,7 @@
 
 <body>
   <%= render 'layouts/header' %>
-
-    <% if flash[:notice] %>
-      <div class="notification alert alert-success">
-        <p class="notice"><%= notice %></p>
-      </div>
-    <% end %>
-
-    <% if flash[:alert] %>
-      <div class="notification alert alert-danger">
-        <p class="alert"><%= alert %></p>
-      </div>
-    <% end %>
-
+  <%= render 'layouts/flash_messages' %>
   <%= yield %>
   <%= render 'layouts/footer' %>
 </body>
