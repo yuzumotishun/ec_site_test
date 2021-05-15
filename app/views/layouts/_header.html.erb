@@ -6,7 +6,11 @@
       </div>
       <div>
         <ul>
-          <p>〇〇 ××さん</p>
+          <% if logged_in? %>
+            <p><%= current_user.last_name %> <%= current_user.first_name %> さん</p>
+          <% else %>
+            <p>ゲスト さん</p>
+          <% end %>
         </ul>
         <ul class="navbar-nav">
           <a class="nav-link text-dark" href="#">商品検索</a>
