@@ -8,8 +8,6 @@
         <ul>
           <% if logged_in? %>
             <p><%= current_user.last_name %> <%= current_user.first_name %> さん</p>
-          <% else %>
-            <p>ゲスト さん</p>
           <% end %>
         </ul>
         <ul class="navbar-nav">
