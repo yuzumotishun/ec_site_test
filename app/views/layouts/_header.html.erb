@@ -6,14 +6,16 @@
       </div>
       <div>
         <ul>
-          <p>〇〇 ××さん</p>
+          <% if logged_in? %>
+            <p><%= current_user.last_name %> <%= current_user.first_name %> さん</p>
+          <% end %>
         </ul>
         <ul class="navbar-nav">
           <a class="nav-link text-dark" href="#">商品検索</a>
           <a class="nav-link text-dark" href="#">カート</a>
           <a class="nav-link text-dark" href="#">注文履歴</a>
           <a class="nav-link text-dark" href="#">ユーザ情報</a>
-          <a class="nav-link text-dark" href="#">ログアウト</a>
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
         </ul>
       </div>
     </div>
