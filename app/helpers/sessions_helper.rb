@@ -18,15 +18,15 @@ module SessionsHelper
 
   def logged_in_user
     unless logged_in?
-    flash[:danger] = "ログインしてください"
-    redirect_to login_path
+      flash[:danger] = "ログインしてください"
+      redirect_to login_path
     end
   end
 
   def correct_user
     user = User.find(params[:id])
     unless user == current_user
-      redirect_to root_path, flash: { danger: '他人の情報にアクセスすることはできません。' }
+      redirect_to root_path, flash: { danger: "他人の情報にアクセスすることはできません。" }
     end
   end
 end
