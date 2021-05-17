@@ -24,8 +24,9 @@ module SessionsHelper
   end
 
   def correct_user
-    @user = User.find(params[:id])
-    flash[:danger] = "他人の情報にアクセスすることはできません。"
-    redirect_to(root_path) unless @user == current_user
+    user = User.find(params[:id])
+    unless user == current_user
+      redirect_to root_path, flash: { danger: '他人の情報にアクセスすることはできません。' }
+    end
   end
 end
