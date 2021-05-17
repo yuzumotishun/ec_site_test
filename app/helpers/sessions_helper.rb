@@ -22,4 +22,10 @@ module SessionsHelper
     redirect_to login_path
     end
   end
+
+  def correct_user
+    @user = User.find(params[:id])
+    flash[:danger] = "他人の情報にアクセスすることはできません。"
+    redirect_to(root_path) unless @user == current_user
+  end
 end
