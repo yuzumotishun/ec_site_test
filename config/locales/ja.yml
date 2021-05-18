@@ -6,7 +6,7 @@ ja:
       user:
         user_classification: ユーザー種別
         first_name: 名
-        last_name: 性
+        last_name: 姓
         zipcode: 郵便番号
         prefecture: 都道府県
         municipality: 市町村区
