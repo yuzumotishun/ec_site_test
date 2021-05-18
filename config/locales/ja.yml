@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: #ユーザモデル
+    attributes:
+      user:
+        user_classification: ユーザー種別
+        first_name: 名
+        last_name: 性
+        zipcode: 郵便番号
+        prefecture: 都道府県
+        municipality: 市町村区
+        address: 番地
+        email: メールアドレス
+        phone_number: 電話番号
+        password: パスワード
