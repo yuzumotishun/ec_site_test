@@ -16,7 +16,7 @@ ja:
         phone_number: 電話番号
         user_classification_id: ユーザ種別
         company_name: 会社名
-        delete_flag: deleteフラグ
+        delete_flag: 削除フラグ
   # 全てのmodelで共通して使用する可能性のあるattributesを定義
   attributes:
     user_classification: ユーザ種別
