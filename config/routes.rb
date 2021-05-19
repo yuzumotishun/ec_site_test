@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :products
   resources :users
+  resources :orders
 end
