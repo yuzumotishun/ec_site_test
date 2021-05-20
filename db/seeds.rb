@@ -124,12 +124,10 @@ Purchase.create!(
 ##########################################
 # Orderの作成
 ##########################################
-order1 = Order.create!(
-  user_id: user1.id,
+user1.orders.create!(
   order_number: "8418240123"
 )
-order2 = Order.create!(
-  user_id: user2.id,
+user2.orders.create!(
   order_number: "6651972394"
 )
 ##########################################
@@ -144,65 +142,57 @@ shipment_status2 = ShipmentStatus.create!(
 ##########################################
 # OrderDetailの作成
 ##########################################
-OrderDetail.create!(
+order1.order_details.create!(
   product_id: product1.id,
-  order_id: order1.id,
   shipment_status_id: shipment_status1.id,
   order_detail_number: "7897128712",
   order_quantity: 2,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order1.order_details.create!(
   product_id: product2.id,
-  order_id: order1.id,
   shipment_status_id: shipment_status2.id,
   order_detail_number: "3841856141",
   order_quantity: 1,
   shipment_date: Time.zone.parse("2021-05-12 06:10:53")
 )
-OrderDetail.create!(
+order1.order_details.create!(
   product_id: product3.id,
-  order_id: order1.id,
   shipment_status_id: shipment_status2.id,
   order_detail_number: "5691823011",
   order_quantity: 3,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order1.order_details.create!(
   product_id: product4.id,
-  order_id: order1.id,
   shipment_status_id: shipment_status1.id,
   order_detail_number: "9126923461",
   order_quantity: 1,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order2.order_details.create!(
   product_id: product1.id,
-  order_id: order2.id,
   shipment_status_id: shipment_status2.id,
   order_detail_number: "2296191250",
   order_quantity: 1,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order2.order_details.create!(
   product_id: product2.id,
-  order_id: order2.id,
   shipment_status_id: shipment_status1.id,
   order_detail_number: "1273481722",
   order_quantity: 1,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order2.order_details.create!(
   product_id: product3.id,
-  order_id: order2.id,
   shipment_status_id: shipment_status2.id,
   order_detail_number: "4123896390",
   order_quantity: 1,
   shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
-OrderDetail.create!(
+order2.order_details.create!(
   product_id: product4.id,
-  order_id: order2.id,
   shipment_status_id: shipment_status1.id,
   order_detail_number: "3727202390",
   order_quantity: 2,
