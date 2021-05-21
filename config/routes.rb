@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   resources :products
   resources :users
+  root to: 'static_pages#home'
 end
