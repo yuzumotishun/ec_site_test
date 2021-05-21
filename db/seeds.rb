@@ -99,25 +99,102 @@ product4 = Product.create!(
 ##########################################
 Purchase.create!(
   purchase_price: 330,
-  purchase_quantity: 3,
+  purchase_quantity: 67,
   purchase_company: "青菜社",
   product_id: product1.id,
 )
 Purchase.create!(
   purchase_price: 600,
-  purchase_quantity: 2,
+  purchase_quantity: 24,
   purchase_company: "スーパーばんや",
   product_id: product2.id,
 )
 Purchase.create!(
   purchase_price: 330,
-  purchase_quantity: 3,
+  purchase_quantity: 53,
   purchase_company: "青菜社",
   product_id: product3.id,
 )
 Purchase.create!(
   purchase_price: 600,
-  purchase_quantity: 2,
+  purchase_quantity: 32,
   purchase_company: "スーパーばんや",
   product_id: product4.id,
+)
+##########################################
+# Orderの作成
+##########################################
+user1.orders.create!(
+  order_number: "8418240123"
+)
+user2.orders.create!(
+  order_number: "6651972394"
+)
+##########################################
+# ShipmentStatusの作成
+##########################################
+shipment_status1 = ShipmentStatus.create!(
+  shipment_status_name: "準備中"
+)
+shipment_status2 = ShipmentStatus.create!(
+  shipment_status_name: "発送済"
+)
+##########################################
+# OrderDetailの作成
+##########################################
+order1.order_details.create!(
+  product_id: product1.id,
+  shipment_status_id: shipment_status1.id,
+  order_detail_number: "7897128712",
+  order_quantity: 2,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order1.order_details.create!(
+  product_id: product2.id,
+  shipment_status_id: shipment_status2.id,
+  order_detail_number: "3841856141",
+  order_quantity: 1,
+  shipment_date: Time.zone.parse("2021-05-12 06:10:53")
+)
+order1.order_details.create!(
+  product_id: product3.id,
+  shipment_status_id: shipment_status2.id,
+  order_detail_number: "5691823011",
+  order_quantity: 3,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order1.order_details.create!(
+  product_id: product4.id,
+  shipment_status_id: shipment_status1.id,
+  order_detail_number: "9126923461",
+  order_quantity: 1,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order2.order_details.create!(
+  product_id: product1.id,
+  shipment_status_id: shipment_status2.id,
+  order_detail_number: "2296191250",
+  order_quantity: 1,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order2.order_details.create!(
+  product_id: product2.id,
+  shipment_status_id: shipment_status1.id,
+  order_detail_number: "1273481722",
+  order_quantity: 1,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order2.order_details.create!(
+  product_id: product3.id,
+  shipment_status_id: shipment_status2.id,
+  order_detail_number: "4123896390",
+  order_quantity: 1,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
+)
+order2.order_details.create!(
+  product_id: product4.id,
+  shipment_status_id: shipment_status1.id,
+  order_detail_number: "3727202390",
+  order_quantity: 2,
+  shipment_date: Time.zone.parse("2021-05-14 10:10:59")
 )
