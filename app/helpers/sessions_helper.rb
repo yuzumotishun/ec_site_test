@@ -26,7 +26,6 @@ module SessionsHelper
   def correct_user
     user = User.find(params[:id])
     unless user == current_user
-      #### root_pathに該当する箇所は未実装状態のため、エラーする ####
       flash[:danger] = "他人の情報にアクセスすることはできません。"
       redirect_to root_path
     end

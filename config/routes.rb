@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :orders
+  root to: 'static_pages#home'
 end
