@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def show
-    @order = OrderDetail.find_by(id: params[:id])
-    @orders = OrderDetail.all
+    @sum_price = 0
+    @orders = Order.find_by(id: params[:id])
   end
 end
