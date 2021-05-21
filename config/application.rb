@@ -10,6 +10,10 @@ module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    # エラー文を日本語表記で表示するため。
+    config.i18n.default_locale = :ja
+    # 正規表現を使ってconfig/locales以下のymlファイルを読み込むため
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
