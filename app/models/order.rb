@@ -8,13 +8,9 @@ class Order < ApplicationRecord
     end
   end
 
-  def total_price
-    order_details.map do |order_detail|
+  def sum_price
+    order_details.sum do |order_detail|
       order_detail.product.price * order_detail.order_quantity
     end
-  end
-
-  def sum_price
-    total_price.sum
   end
 end
