@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.user_classification_id = 1
+    @user.user_classification_id = 1 # 今はユーザー種別が購入者となるようデフォルトで設定している
     if @user.save
       flash[:success] = "ユーザーを登録しました。こちらからログインしてください。"
       redirect_to login_path
