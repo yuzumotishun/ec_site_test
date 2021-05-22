@@ -41,7 +41,6 @@
                 <td><%= order_detail.product.price * order_detail.order_quantity %> 円</td>
                 <td>注文状態：<%= order_detail.shipment_status.shipment_status_name %></td>
                 <% @sum_price += order_detail.product.price * order_detail.order_quantity %>
-                <% @item_number += 1 %>
               </tr>
             <% end %>
           </tbody>
