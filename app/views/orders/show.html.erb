@@ -12,14 +12,14 @@
         <div class="mt-5 ml-3">
           <p>注文番号： <%= @order.order_number %></p>
           <p>注文状態：
-            <% if @shipment_statuses.include?('準備中') %>
+            <% if @order.shipment_prepared? %>
               準備中
             <% else %>
               発送済
             <% end %>
           </p>
         </div>
-        <% if @shipment_statuses.include?('準備中') %>
+        <% if @order.shipment_prepared? %>
           <div class="text-right">
               <button type="button" class="btn btn-danger">注文をキャンセルする</button>
           </div>
