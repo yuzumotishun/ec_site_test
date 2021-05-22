@@ -31,10 +31,9 @@
             </tr>
           </thead>
           <tbody>
-            <% @sum_price = 0 %>
-            <% @order.order_details.each do |order_detail| %>
+            <% @order.order_details.each.with_index do |order_detail, i| %>
               <tr>
-                <th scope="row"><%= @item_number %></th>
+                <th scope="row"><%= i+1 %></th>
                 <td><%= order_detail.product.product_name %></td>
                 <td><%= order_detail.product.category.category_name %></td>
                 <td><%= order_detail.product.price %></td>
