@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
       <div class="navbar-nav mr-auto">
-        <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+        <h1><%= link_to "探求学園Rails専攻", root_path, class: "nav-link navbar-brand"%></h1>
       </div>
       <div>
         <ul>
@@ -11,11 +11,17 @@
           <% end %>
         </ul>
         <ul class="navbar-nav">
-          <%= link_to "商品検索", products_path, class: "nav-link text-dark"%>
-          <a class="nav-link text-dark" href="#">カート</a>
-          <a class="nav-link text-dark" href="#">注文履歴</a>
-          <a class="nav-link text-dark" href="#">ユーザ情報</a>
-          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
+          <% if logged_in? %>
+            <%#### TODO: 商品検索、カート、注文機能のパスを記入する ####%>
+            <%= link_to "商品検索", "#", class: "nav-link text-dark"%>
+            <%= link_to "カート", "#", class: "nav-link text-dark"%>
+            <%= link_to "注文履歴", "#", class: "nav-link text-dark"%>
+            <%= link_to "ユーザ情報", user_path(current_user.id), class: "nav-link text-dark"%>
+            <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
+          <% else %>
+            <%= link_to "新規登録", signup_path, class: "nav-link text-dark" %>
+            <%= link_to "ログイン", login_path, class: "nav-link text-dark" %>
+          <% end %>
         </ul>
       </div>
     </div>
