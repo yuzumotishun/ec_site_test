@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   resources :products
   resources :users
+  resources :orders
   root to: 'static_pages#home'
 end
