@@ -12,14 +12,14 @@
           まだアカウントを<br>
           お持ちでない方はこちら
         </p>
-        <a class="btn btn-primary" href="#" role="button">新規登録</a>
+        <%= link_to "新規登録", signup_path, class: "btn btn-primary" %>
       </div>
       <div class="mt-3 ml-3 text-center col-sm-3">
         <p>
           すでにアカウントを<br>
           お持ちの方はこちら
         </p>
-        <a class="btn btn-primary" href="#" role="button">ログイン</a>
+        <%= link_to "ログイン", login_path, class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
