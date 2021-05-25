@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :order_details
+  has_many :order_details, dependent: :destroy
 
   def shipment_prepared?
     order_details.any? do |order_detail|
@@ -9,8 +9,6 @@ class Order < ApplicationRecord
   end
 
   def total_price
-    order_details.sum do |order_detail|
-      order_detail.sub_total_price
-    end
+    order_details.sum(&:sub_total_price)
   end
 end
