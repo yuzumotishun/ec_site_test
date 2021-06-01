@@ -7,8 +7,8 @@ RSpec.describe Order, type: :model do
   end
 
   context "注文を確定する ボタンを押した時" do
-    let(:customer) { create(:customer) }
-    let(:user) { create(:user, user_classification: customer) }
+    let(:user_classification) { create(:user_classification, :customer) }
+    let(:user) { create(:user, user_classification: user_classification) }
     let(:order) { create(:order, user: user) }
     it "order が作成される" do
       expect(order).to be_valid
@@ -16,8 +16,8 @@ RSpec.describe Order, type: :model do
   end
 
   describe "def shipment_prepared?" do
-    let(:customer) { create(:customer) }
-    let(:user) { create(:user, user_classification: customer) }
+    let(:user_classification) { create(:user_classification, :customer) }
+    let(:user) { create(:user, user_classification: user_classification) }
     let(:order) { create(:order, user: user) }
     let(:category) { create(:category) }
     let(:sale_status) { create(:sale_status) }
