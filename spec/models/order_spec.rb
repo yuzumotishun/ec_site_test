@@ -6,7 +6,7 @@ RSpec.describe Order, type: :model do
     it { should have_many(:order_details).dependent(:destroy) }
   end
 
-  context "注文を確定する ボタンを押した時" do
+  describe "正常にデータが作成されるテスト" do
     let(:user_classification) { create(:user_classification, :customer) }
     let(:user) { create(:user, user_classification: user_classification) }
     let(:order) { create(:order, user: user) }
