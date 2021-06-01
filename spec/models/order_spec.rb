@@ -1,6 +1,11 @@
 require "rails_helper"
 
 RSpec.describe Order, type: :model do
+  describe "association" do
+    it { should belong_to(:user) }
+    it { should have_many(:order_details).dependent(:destroy) }
+  end
+
   context "注文を確定する ボタンを押した時" do
     let(:customer) { create(:customer) }
     let(:user) { create(:user, user_classification: customer) }
