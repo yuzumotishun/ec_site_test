@@ -25,5 +25,11 @@ RSpec.describe Order, type: :model do
         expect(order_detail.shipment_status.shipment_status_name).to eq "準備中"
       end
     end
+    context "order_details.shipment_status に 発送済 が含まれるとき" do
+      let(:shipment_status) { create(:shipment_status, :shipped) }
+        it "false が返される" do
+          expect(order_detail.shipment_status.shipment_status_name).not_to eq "準備中"
+        end
+    end
   end
 end
