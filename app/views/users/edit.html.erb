@@ -1,5 +1,6 @@
 <main>
   <%= form_with model: @user, local: true do |form| %>
+    <%= render 'shared/error_messages', object: form.object %>
     <h2 class="text-center mt-5">ユーザ情報修正</h2>
 
     <table width="60%" style="margin: auto;">

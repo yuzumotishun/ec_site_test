@@ -1,0 +1,101 @@
+<main>
+  <%= form_for (@user) do |form| %>
+    <h2 class="text-center mt-5">お客様情報登録</h2>
+
+    <table width="60%" style="margin: auto;">
+      <tr height="40">
+        <td align="center">氏名</td>
+        <td>
+          <%= form.label :last_name, "姓" %>
+          <%= form.text_field :last_name, id: "last_name", maxlength: 10 %>
+          <%= form.label :first_name, "名" %>
+          <%= form.text_field :first_name, id: "first_name", maxlength: 10 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center">郵便番号</td>
+        <td>
+          <%= form.label :zipcode, "〒" %>
+          <%= form.text_field :zipcode, id: "zipcode", title: "半角数字でハイフンを含めて入力してください", pattern: "[0-9]{3}-[0-9]{4}",length: 8 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :prefecture, "都道府県" %></td>
+        <td>
+          <%= form.text_field :prefecture, style:"width: 100%;", id: "prefecture", maxlength: 5 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :municipality, "市区町村" %></td>
+        <td colspan="2">
+          <%= form.text_field :municipality, style:"width: 100%;", id: "municipality", maxlength: 10 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :address, "番地" %></td>
+        <td>
+          <%= form.text_field :address, style:"width: 100%;", id: "address", maxlength: 15 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :apartments, "マンション部屋番号" %></td>
+        <td>
+          <%= form.text_field :apartments, style:"width: 100%;", id: "apartments", maxlength: 20 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :company_name, "会社名" %></td>
+        <td>
+          <%= form.text_field :company_name, style:"width: 100%;", id: "company_name" %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :email, "メールアドレス" %></td>
+        <td>
+          <%= form.email_field :email, style:"width: 100%;", id: "email" %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :phone_number, "電話番号" %></td>
+        <td>
+          <%= form.text_field :phone_number, style:"width: 100%;", id: "phone_number", 
+              title: "半角数字でハイフンを含めずに入力してください", pattern: "[0-9][0-9]*", maxlength: "15" %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :password, "パスワード" %></td>
+        <td>
+          <%= form.password_field :password, style:"width: 100%;", id: "password", 
+              pattern: "^[0-9A-Za-z]+$", minlength: 6, maxlength: 15 %>
+        </td>
+      </tr>
+
+      <tr height="40">
+        <td align="center"><%= form.label :password_confirmation, "パスワード (再入力)" %></td>
+        <td>
+          <%= form.password_field :password_confirmation, style:"width: 100%;", id: "password", 
+              pattern: "^[0-9A-Za-z]+$", minlength: 6, maxlength: 15 %>
+        </td>
+      </tr>
+    </table>
+
+    <div class="row justify-content-center">
+          <div class="col-sm-2 mt-5">
+            <%= form.submit "登録", class: "btn btn-primary btn-block" %>
+          </div>
+    </div>
+    <div class="mt-5 text-center">
+      <h3><%= link_to "ログインはこちらから", login_path %></h3>
+    </div>
+    <% end %>
+</main>
+
