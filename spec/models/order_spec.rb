@@ -10,7 +10,7 @@ RSpec.describe Order, type: :model do
     let(:user_classification) { create(:user_classification, :customer) }
     let(:user) { create(:user, user_classification: user_classification) }
     let(:order) { create(:order, user: user) }
-    it "order が作成される" do
+    it "order が存在する" do
       expect(order).to be_valid
     end
   end
