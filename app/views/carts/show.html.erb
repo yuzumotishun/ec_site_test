@@ -61,12 +61,18 @@
                 <td class="align-middle">
                   <%= cart[4] %> 円
                 </td>
+                <td>
+                <%= hidden_field_tag :index, i %>  
+                <%= f.submit "更新", class: "btn btn-primary" %>
+                
+                </td>
               <% end %>
 
               <% #商品削除 %>
               <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
                 <td class="border-0 align-middle">
-                  <%= f.submit "削除", value: (delete_number = i) , class: "btn btn-danger" %>
+                  <%= hidden_field_tag :index, i %>  
+                  <%= f.submit "削除", params: {index: i }, class: "btn btn-danger" %>
                 </td>
               <% end %>
             </tr>
