@@ -13,17 +13,15 @@ class CartsController < ApplicationController
     if session[:cart].blank? 
       #商品が入っていない場合
       session[:cart] = [{product_id: params["product_id"], quantity: params["quantity"].to_i}]
+      redirect_to carts_show_path
       return
     end
     #商品が既に入っている場合、追加する商品が重複するかで条件分岐
     
     match = session[:cart].select{|cart|cart["product_id"] == params["product_id"]}
     #重複が発生する場合
-    if match
-      
-      binding.pry
-      
-      match["quantity"] += params["quantity"].to_i
+    if match.present?
+      match[0]["quantity"] += params["quantity"].to_i
     #重複が発生しない場合
     else
       session[:cart].push({ product_id: params["product_id"], quantity: params["quantity"].to_i })
@@ -86,5 +84,14 @@ class CartsController < ApplicationController
     session[:cart].delete_at(index)
     redirect_to carts_show_path
   end
+
+  #合計金額の計算
+  def total_amount
+    @total_amount = 0
+    @cart.each {|cart|
+      @total_amount += cart.sub_total
+    }
+  end
+  
 end
 
