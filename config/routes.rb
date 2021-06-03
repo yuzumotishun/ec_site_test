@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
+  get 'carts/show', to: 'carts#show', as: 'carts_show'
+  post 'carts/add_cart', to: 'carts#add_cart'
+  patch 'carts/change_quantity', to: 'carts#change_quantity', as: 'change_item_quantity'
+  delete 'carts/destroy_carts_item', to: 'carts#destroy_carts_item', as: 'destroy_carts_item'
+  get '/perchase_completed', to: 'orders#perchase_completed', as: 'perchase_completed'
   resources :products
   resources :users
   resources :orders

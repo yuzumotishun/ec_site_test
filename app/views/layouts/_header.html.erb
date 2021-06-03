@@ -12,9 +12,9 @@
         </ul>
         <ul class="navbar-nav">
           <% if logged_in? %>
-            <%#### TODO: 商品検索、カート、注文機能のパスを記入する ####%>
+            <%#### TODO: 商品検索、注文機能のパスを記入する ####%>
             <%= link_to "商品検索", "#", class: "nav-link text-dark"%>
-            <%= link_to "カート", "#", class: "nav-link text-dark"%>
+            <%= link_to "カート", carts_show_path, class: "nav-link text-dark"%>
             <%= link_to "注文履歴", "#", class: "nav-link text-dark"%>
             <%= link_to "ユーザ情報", user_path(current_user.id), class: "nav-link text-dark"%>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
