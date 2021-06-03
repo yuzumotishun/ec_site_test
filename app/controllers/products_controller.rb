@@ -8,8 +8,6 @@ class ProductsController < ApplicationController
   end
 end
 
-
-
 # <div class="container">
 #       <nav aria-label="...">
 #         <ul class="pagination justify-content-center">

@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6, maximum: 15 }
 
   has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
   belongs_to :user_classification
   has_secure_password
 end

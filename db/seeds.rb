@@ -119,7 +119,7 @@ product7 = Product.create!(
   price: 230,
   description: "フィリピン産絶妙に甘いバナナです。",
   delete_flag: false,
-  category_id: categor1.id,
+  category_id: category1.id,
   sale_status_id: sale_status2.id,
   product_status_id: product_status1.id,
   user_id: user2.id,
@@ -304,10 +304,10 @@ Purchase.create!(
 ##########################################
 # Orderの作成
 ##########################################
-user1.orders.create!(
+order1 = user1.orders.create!(
   order_number: "8418240123",
 )
-user2.orders.create!(
+order2 = user2.orders.create!(
   order_number: "6651972394",
 )
 ##########################################
