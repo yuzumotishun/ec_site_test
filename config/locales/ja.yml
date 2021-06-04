@@ -22,3 +22,10 @@ ja:
     user_classification: ユーザ種別
     created_at: 作成日
     updated_at: 更新日
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "« 前"
+      next: "次 »"
+      truncate: "..."
