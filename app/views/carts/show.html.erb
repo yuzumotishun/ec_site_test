@@ -1,5 +1,5 @@
 <main>
-
+<%#### TODO: userの情報反映 ####%>
   <div class="container">
     <div class="row">
       <div class="col-12 card border-dark mt-5">
@@ -11,7 +11,9 @@
       </div>
     </div>
   </div>
-
+<% if @cart.blank? %>
+  <h1 class="text-center">カートに商品はありません</h1>
+<% else %>
   <div class="container">
     <div class="row">
       <table class="table mt-5 ml-3 border-dark">
@@ -38,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= @cart.each.with_index(1) do |cart, i| %>
+          <% @cart.each.with_index(1) do |cart, i| %>
             <tr class="text-center">
               <th class="align-middle">
                 <%= i %>
@@ -76,59 +78,29 @@
                 </td>
               <% end %>
             </tr>
-
           <% end %>
+          <%#### TODO: 合計の位置を右に修正 ####%>
           <tr class="text-center">
-            <th class="border-top-0 border-bottom border-dark align-middle">
-              2
-            </th>
-            <td class="border-top-0 border-bottom border-dark align-middle">
-              商品2
-            </td>
-            <td class="border-top-0 border-bottom border-dark align-middle">
-              食料品
-            </td>
-            <td class="border-top-0 border-bottom border-dark align-middle">
-              2000円
-            </td>
-            <td class="border-top-0 border-bottom border-dark align-middle">
-              <button type="button" class="btn btn-outline-dark">2</button>&nbsp;&nbsp;個
-            </td>
-            <td class="border-top-0 border-bottom border-dark align-middle">
-              4000円
-            </td>
-            <td class="border-0">
-              <a class="btn btn-danger" href="#" role="button">削除</a>
-            </td>
-          </tr>
-          <tr class="text-center">
-            <th class="border-bottom-0 align-middle">
-            </th>
-            <td class="border-bottom-0 align-middle">
-            </td>
-            <td class="border-bottom-0 align-middle">
-            </td>
-            <td class="border-bottom-0 align-middle">
-            </td>
-            <td class="border-bottom-0 align-middle">
+            <td class="border-bottom-0 align-right">
               合計
             </td>
-            <td class="border-bottom-0 align-middle">
-              9000円
+            <td class="border-bottom-0 align-right">
+              <%= @cart_total_price %>円
             </td>
           </tr>
           <tr class="text-right">
             <th class="border-0">
             </th>
             <td class="border-0">
-              <a class="btn btn-success " href="#" role="button">買い物を続ける</a>
+            <%#### TODO: 商品検索のパスを指定する ####%>
+              <%= link_to "買い物を続ける", "#", class: "btn btn-success"%>
             </td>
             <td class="border-0">
             </td>
             <td class="border-0">
             </td>
             <td class="border-0">
-              <a class="btn btn-primary" href="#" role="button">注文を確定する</a>
+              <%= link_to "注文を確定する", orders_create_path(session[:user_id]), method: :post,  class: "btn btn-primary"%>
             </td>
             <td class="border-0 align-middle">
             </td>
@@ -137,5 +109,5 @@
       </table>
     </div>
   </div>
-
+<% end %>
 </main>
