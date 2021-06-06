@@ -21,6 +21,7 @@
           <% else %>
             <%= link_to "新規登録", signup_path, class: "nav-link text-dark" %>
             <%= link_to "ログイン", login_path, class: "nav-link text-dark" %>
+            <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: "nav-link text-dark" %>
           <% end %>
         </ul>
       </div>
