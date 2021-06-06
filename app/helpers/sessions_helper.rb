@@ -30,4 +30,28 @@ module SessionsHelper
       redirect_to root_path
     end
   end
+
+  def guest_login
+    user = guest
+    login user
+    flash[:success] = "ゲストユーザーとしてログインしました。"
+    redirect_to root_path
+  end
+
+  def guest
+    User.find_or_create_by!(email: "guest@example.com") do |user|
+      user.id = 10000,
+      user.last_name = "ようこそ",
+      user.first_name = "ゲスト",
+      user.zipcode = "123-4567",
+      user.prefecture = "東京",
+      user.municipality = "杉並区",
+      user.address = "1-2-3",
+      user.apartments = "ルーム303",
+      user.phone_number = "08012345678",
+      user.company_name = "株式会社 葦原",
+      user.user_classification_id = 1,
+      user.password =  "password"
+    end
+  end
 end

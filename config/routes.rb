@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
+  post   'guest_login'   => 'sessions#guest_login'
   get 'carts/show', to: 'carts#show', as: 'carts_show'
   post 'carts/add_cart', to: 'carts#add_cart'
   patch 'carts/change_quantity', to: 'carts#change_quantity', as: 'change_item_quantity'
