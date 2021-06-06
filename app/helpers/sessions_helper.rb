@@ -52,6 +52,10 @@ module SessionsHelper
       user.company_name = "株式会社 葦原",
       user.user_classification_id = 1,
       user.password =  "password"
+  def guest_user
+    if params[:user][:email].downcase == "guest@example.com"
+      flash[:danger] = "ゲストユーザー情報の再設定はできません。"
+      redirect_to root_path
     end
   end
 end
