@@ -3,7 +3,7 @@ class CartsController < ApplicationController
     @cart = []
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
-      sub_total = product.price * cart["quantity"]
+      sub_total = product.price * cart["quantity"].to_i
       if product
         @cart.push({product_id: product.id, 
                     name: product.product_name, 
@@ -37,8 +37,8 @@ class CartsController < ApplicationController
 
   # カート内商品の数量変更
   def change_quantity
-    index = params["index"].to_i - 1
-    session[:cart][index]["quantity"] = params[:quantity].to_i
+    array_index = session[:cart].each_index.select{|i| session[:cart][i]["product_id"] == params["product_id"]}
+    session[:cart][array_index[0]]["quantity"] = params["quantity"]
     redirect_to carts_show_path
   end
 

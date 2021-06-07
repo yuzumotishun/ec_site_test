@@ -72,9 +72,8 @@
               <%= cart[:sub_total] %> 円
             </td>
             <td>
-              <%= hidden_field_tag :index, i %>
+              <%= hidden_field_tag :product_id, cart[:product_id] %>
               <%= f.submit "更新", class: "btn btn-primary" %>
-
             </td>
             <% end %>
 
