@@ -2,9 +2,11 @@ class CartsController < ApplicationController
   def show
     @cart = []
     session[:cart].each do |cart|
-      product = Product.find(cart["product_id"])
+      product = Product.find_by(id: cart["product_id"])
       sub_total = product.price * cart["quantity"]
-      @cart.push([product.product_name, product.category.category_name, product.price, cart["quantity"].to_i, sub_total])
+      if product
+        @cart.push([product.product_name, product.category.category_name, product.price, cart["quantity"].to_i, sub_total])
+      end
     end
     @cart_total_price = cart_total_price(@cart)
   end
