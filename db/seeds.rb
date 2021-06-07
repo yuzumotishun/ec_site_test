@@ -94,6 +94,186 @@ product4 = Product.create!(
   product_status_id: product_status2.id,
   user_id: user2.id,
 )
+product5 = Product.create!(
+  product_name: "手袋",
+  price: 1180,
+  description: "ふかふかのあったかい手袋です。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product6 = Product.create!(
+  product_name: "じゃがいも",
+  price: 130,
+  description: "国産のとれたて新鮮なじゃがいもです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product7 = Product.create!(
+  product_name: "バナナ",
+  price: 230,
+  description: "フィリピン産絶妙に甘いバナナです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product8 = Product.create!(
+  product_name: "洗剤",
+  price: 1460,
+  description: "いい香りの洗剤です。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product9 = Product.create!(
+  product_name: "化粧品",
+  price: 1890,
+  description: "上質な素材をふんだんに使った化粧水です。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product10 = Product.create!(
+  product_name: "パイナップル",
+  price: 2980,
+  description: "熟していてとてもジューシーなパイナップルです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product11 = Product.create!(
+  product_name: "ぶどう",
+  price: 380,
+  description: "一粒一粒がしっかりしてる最上級のぶどうです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product12 = Product.create!(
+  product_name: "遮光カーテン",
+  price: 4980,
+  description: "日光100%カットのカーテンです。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product13 = Product.create!(
+  product_name: "玉ねぎ",
+  price: 140,
+  description: "今が旬の新玉ねぎです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product14 = Product.create!(
+  product_name: "ヨギボー",
+  price: 23980,
+  description: "家にあるとだめになってしまうほどの快適さ！ヨギボーです。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product15 = Product.create!(
+  product_name: "にんじん",
+  price: 110,
+  description: "太陽の恵を受けて育てられた立派なにんじんです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product16 = Product.create!(
+  product_name: "コーヒーメーカー",
+  price: 12980,
+  description: "家でもいつでもカフェ気分。美味しくコーヒーを作れるコーヒーメーカーです。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product17 = Product.create!(
+  product_name: "苺のショートケーキ",
+  price: 940,
+  description: "最高級の苺をふんだんに使った上品なショートケーキです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product18 = Product.create!(
+  product_name: "机",
+  price: 2980,
+  description: "頑丈で大きなアンティーク調の机です。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product19 = Product.create!(
+  product_name: "どら焼き",
+  price: 120,
+  description: "栗が詰まっていて大満足のボリューミーなどら焼きです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product20 = Product.create!(
+  product_name: "椅子",
+  price: 2980,
+  description: "背もたれが柔軟に動くアンティーク調の椅子です。",
+  delete_flag: false,
+  category_id: category2.id,
+  sale_status_id: sale_status1.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
+product21 = Product.create!(
+  product_name: "黒毛和牛",
+  price: 3250,
+  description: "上質な国産の黒毛和牛です。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status2.id,
+  user_id: user2.id,
+)
+product22 = Product.create!(
+  product_name: "みかん",
+  price: 180,
+  description: "珍しい緑色のみかんです。",
+  delete_flag: false,
+  category_id: category1.id,
+  sale_status_id: sale_status2.id,
+  product_status_id: product_status1.id,
+  user_id: user2.id,
+)
 ##########################################
 # Purchaseの作成
 ##########################################
@@ -124,10 +304,10 @@ Purchase.create!(
 ##########################################
 # Orderの作成
 ##########################################
-user1.orders.create!(
+order1 = user1.orders.create!(
   order_number: "8418240123",
 )
-user2.orders.create!(
+order2 = user2.orders.create!(
   order_number: "6651972394",
 )
 ##########################################
