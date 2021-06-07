@@ -21,8 +21,7 @@ class CartsController < ApplicationController
     if session[:cart].blank?
       # 商品が入っていない場合
       session[:cart] = [{ product_id: params["product_id"], quantity: params["quantity"].to_i }]
-      redirect_to carts_show_path
-      return
+      return redirect_to carts_show_path
     end
     # 商品が既に入っている場合、追加する商品が重複するかで条件分岐
     match = session[:cart].select {|cart| cart["product_id"] == params["product_id"] }
