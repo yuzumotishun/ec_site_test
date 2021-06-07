@@ -5,7 +5,12 @@ class CartsController < ApplicationController
       product = Product.find_by(id: cart["product_id"])
       sub_total = product.price * cart["quantity"]
       if product
-        @cart.push([product.product_name, product.category.category_name, product.price, cart["quantity"].to_i, sub_total])
+        @cart.push({product_id: product.id, 
+                    name: product.product_name, 
+                    category_name: product.category.category_name, 
+                    price: product.price, 
+                    quantity: cart["quantity"].to_i, 
+                    sub_total: sub_total})
       end
     end
     @cart_total_price = cart_total_price(@cart)
@@ -47,6 +52,6 @@ class CartsController < ApplicationController
 
   # カート内商品の合計金額の計算
   def cart_total_price(cart)
-    cart.sum {|i| i[4] }
+    cart.sum {|cart_item| cart_item[:sub_total] }
   end
 end

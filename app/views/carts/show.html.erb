@@ -54,22 +54,22 @@
               <%= i %>
             </th>
             <td class="align-middle">
-              <%= cart[0] %>
+              <%= cart[:name] %>
             </td>
             <td class="align-middle">
-              <%= cart[1] %>
+              <%= cart[:category_name] %>
             </td>
             <td class="align-middle">
-              <%= cart[2] %> 円
+              <%= cart[:price] %> 円
             </td>
 
             <% #数量変更 %>
             <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
             <td class="align-middle">
-              <%= f.number_field :quantity, value: cart[3], min: 1, class: "btn btn-outline-dark"%> 個
+              <%= f.number_field :quantity, value: cart[:quantity], min: 1, class: "btn btn-outline-dark"%> 個
             </td>
             <td class="align-middle">
-              <%= cart[4] %> 円
+              <%= cart[:sub_total] %> 円
             </td>
             <td>
               <%= hidden_field_tag :index, i %>
