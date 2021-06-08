@@ -29,7 +29,6 @@ class OrdersController < ApplicationController
     redirect_to perchase_completed_path(order.id)
   end
 
-  # ユーザーの最新のorderデータを抽出し、注文番号を反映する
   def perchase_completed
     @display_number = Order.find_by(id: params["id"]).order_number
   end
