@@ -51,6 +51,6 @@ class CartsController < ApplicationController
 
   # カート内商品の合計金額の計算
   def cart_total_price(cart)
-    cart.sum {|cart_item| cart_item[:sub_total] }
+    cart.sum { _1[:sub_total] }
   end
 end
