@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
       return redirect_to carts_show_path
     end
 
-    complex_data = current_user.id.to_s + Time.current.to_i.to_s
+    complex_data = "#{current_user.id}#{Time.current.to_i}"
     order = current_user.orders.create!(
       order_date: Time.current,
       order_number: complex_data.rjust(16, "0"),
