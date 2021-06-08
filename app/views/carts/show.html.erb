@@ -80,8 +80,8 @@
             <% #商品削除 %>
             <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
             <td class="border-0 align-middle">
-              <%= hidden_field_tag :index, i %>
-              <%= f.submit "削除", params: {index: i }, class: "btn btn-danger" %>
+              <%= hidden_field_tag :product_id, cart[:product_id] %>
+              <%= f.submit "削除", class: "btn btn-danger" %>
             </td>
             <% end %>
           </tr>

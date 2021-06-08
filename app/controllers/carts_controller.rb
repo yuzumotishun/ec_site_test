@@ -44,8 +44,8 @@ class CartsController < ApplicationController
 
   # カート内商品の削除
   def destroy_carts_item
-    index = params["index"].to_i - 1
-    session[:cart].delete_at(index)
+    array_index = session[:cart].each_index.select{|i| session[:cart][i]["product_id"] == params["product_id"]}
+    session[:cart].delete_at(array_index[0])
     redirect_to carts_show_path
   end
 
