@@ -11,17 +11,18 @@ class OrdersController < ApplicationController
     if session[:cart].blank?
       return redirect_to carts_show_path
     end
+
     complex_data = current_user.id.to_s + Time.current.to_i.to_s
-    order = current_user.orders.create(
+    order = current_user.orders.create!(
       order_date: Time.current,
-      order_number: complex_data.rjust(16, "0")
+      order_number: complex_data.rjust(16, "0"),
     )
     session[:cart].each do |cart|
       order.order_details.create(
         product_id: cart["product_id"],
         shipment_status_id: 1,
         order_detail_number: cart["product_id"] + complex_data,
-        order_quantity: cart["quantity"]
+        order_quantity: cart["quantity"],
       )
     end
     session[:cart].clear

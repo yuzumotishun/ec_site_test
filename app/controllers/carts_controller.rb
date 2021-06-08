@@ -4,14 +4,14 @@ class CartsController < ApplicationController
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
       sub_total = product.price * cart["quantity"].to_i
-      if product
-        @cart.push({product_id: product.id, 
-                    name: product.product_name, 
-                    category_name: product.category.category_name, 
-                    price: product.price, 
-                    quantity: cart["quantity"].to_i, 
-                    sub_total: sub_total})
-      end
+      next unless product
+
+      @cart.push({ product_id: product.id,
+                   name: product.product_name,
+                   category_name: product.category.category_name,
+                   price: product.price,
+                   quantity: cart["quantity"].to_i,
+                   sub_total: sub_total })
     end
     @cart_total_price = cart_total_price(@cart)
   end
@@ -37,14 +37,14 @@ class CartsController < ApplicationController
 
   # カート内商品の数量変更
   def change_quantity
-    array_index = session[:cart].each_index.select{|i| session[:cart][i]["product_id"] == params["product_id"]}
+    array_index = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params["product_id"] }
     session[:cart][array_index[0]]["quantity"] = params["quantity"]
     redirect_to carts_show_path
   end
 
   # カート内商品の削除
   def destroy_carts_item
-    array_index = session[:cart].each_index.select{|i| session[:cart][i]["product_id"] == params["product_id"]}
+    array_index = session[:cart].each_index.select {|i| session[:cart][i]["product_id"] == params["product_id"] }
     session[:cart].delete_at(array_index[0])
     redirect_to carts_show_path
   end
