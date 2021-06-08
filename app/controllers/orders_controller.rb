@@ -25,12 +25,11 @@ class OrdersController < ApplicationController
       )
     end
     session[:cart].clear
-    redirect_to perchase_completed_path
+    redirect_to perchase_completed_path(order.id)
   end
 
   # ユーザーの最新のorderデータを抽出し、注文番号を反映する
   def perchase_completed
-    latest_order = Order.where(:user_id == current_user.id).last
-    @display_number = latest_order.order_number
+    @display_number = Order.find_by(id: params["id"]).order_number
   end
 end
