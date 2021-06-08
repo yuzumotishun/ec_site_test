@@ -5,7 +5,8 @@
         <div class="cord-body ml-3 mb-2">
           <h4 class="mt-4">お届け先</h4>
           <p class="mb-2" style="padding-left: 20px;">
-            〒<%= current_user.zipcode %>
+            〒
+            <%= current_user.zipcode %>
             <%=  current_user.prefecture %>
             <%=  current_user.municipality %>
             <%=  current_user.address %>
@@ -14,7 +15,8 @@
           <p style="padding-left: 160px;">
             <%=  current_user.last_name %>
             <%=  current_user.first_name %>
-            様</p>
+            様
+          </p>
         </div>
       </div>
     </div>
