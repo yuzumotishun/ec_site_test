@@ -22,7 +22,7 @@
     </div>
   </div>
   <% if @cart.blank? %>
-  <h1 class="text-center">カートに商品はありません</h1>
+    <h1 class="text-center">カートに商品はありません</h1>
   <% else %>
   <div class="container">
     <div class="row">
@@ -64,7 +64,6 @@
             <td class="align-middle">
               <%= cart[:price] %> 円
             </td>
-
             <% #数量変更 %>
             <%= form_with url: change_item_quantity_path, method: :patch, local: true do |f| %>
             <td class="align-middle">
@@ -78,7 +77,6 @@
               <%= f.submit "更新", class: "btn btn-primary" %>
             </td>
             <% end %>
-
             <% #商品削除 %>
             <%= form_with url: destroy_carts_item_path, method: :delete, local: true do |f| %>
             <td class="border-0 align-middle">
@@ -88,7 +86,6 @@
             <% end %>
           </tr>
           <% end %>
-          <%#### TODO: 合計の位置を右に修正 ####%>
           <tr class="text-center">
             <td class="border-bottom-0 align-right"></td>
             <td class="border-bottom-0 align-right"></td>
