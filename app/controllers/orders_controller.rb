@@ -6,9 +6,6 @@ class OrdersController < ApplicationController
   end
 
   def correct_users_order
-    
-    binding.pry
-    
     unless current_user.id == Order.find(params[:id]).user_id
       flash[:danger] = "他人の情報にアクセスすることはできません。"
       redirect_to root_path
