@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :correct_user, only: [:show]
+  before_action :correct_users_order, only: [:show]
 
   def show
     @order = Order.find_by(id: params[:id])
@@ -31,5 +31,12 @@ class OrdersController < ApplicationController
 
   def perchase_completed
     @display_number = Order.find_by(id: params[:id]).order_number
+  end
+  
+  def correct_users_order
+    unless current_user.id == Order.find(params[:id]).user_id
+      flash[:danger] = "他人の情報にアクセスすることはできません。"
+      redirect_to root_path
+    end
   end
 end
