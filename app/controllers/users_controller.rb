@@ -28,6 +28,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    if @user.email == "guest@example.com"
+      flash[:danger] = "ゲストユーザー情報の再設定はできません。"
+      return redirect_to edit_user_path
+    end
+
     if @user.update(user_params)
       flash[:success] = "ユーザー情報を更新しました。"
       redirect_to @user
