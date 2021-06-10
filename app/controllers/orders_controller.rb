@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
       order.order_details.create(
         product_id: cart["product_id"],
         shipment_status_id: 1,
-        order_detail_number: "#{cart["product_id"]}#{complex_data}",
+        order_detail_number: "#{cart["product_id"]}#{complex_data}".rjust(16, "0"),
         order_quantity: cart["quantity"],
       )
     end
