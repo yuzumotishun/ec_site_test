@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   def show
+    session[:cart] ||= []
     @cart = []
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
