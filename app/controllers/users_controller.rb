@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:show, :edit, :update]
   before_action :correct_user, only: [:show, :edit, :update]
-  before_action :guest_user, only: :update
 
   def new
     @user = User.new
@@ -29,7 +28,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.email == "guest@example.com"
+      flash[:danger] = "ゲストユーザー情報の再設定はできません。"
+      redirect_to edit_user_path
+    elsif @user.update(user_params)
       flash[:success] = "ユーザー情報を更新しました。"
       redirect_to @user
     else
