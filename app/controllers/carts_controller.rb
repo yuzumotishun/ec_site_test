@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   def show
     return if session[:cart].blank?
+
     @cart = []
     session[:cart].each do |cart|
       product = Product.find_by(id: cart["product_id"])
