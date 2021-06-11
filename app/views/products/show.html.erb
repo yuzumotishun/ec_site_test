@@ -15,15 +15,12 @@
           <div class="price">価格 : <span><%= @product.price %>円</span></div>
         </div>
         <%#### 後でカートに商品情報を入れるというPOSTリクエストを飛ばすようにする ####%>
-        <form class="product-purchase">
-          <div class="pur-number-box">
-            購入個数
-            <input class="pur-number">
-            個
-            <button class="cart-button">
-              カート
-            </button>
-        </form>
+          <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
+            <%= f.label :quantity, "購入個数", class: "pur-number-box"%>>
+            <%= f.number_field :quantity, min: 1, class: "pur-number" %>>
+            <%= hidden_field_tag :product_id, @product.id %>
+            <%= f.submit "カートへ", class: "cart-button" %>>
+          <% end %>
         <%#### ここまで ####%>
       </div>
     </section>
