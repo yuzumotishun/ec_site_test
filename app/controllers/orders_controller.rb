@@ -39,4 +39,11 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def destroy
+    current_user.orders.find(params[:id]).destroy
+    flash[:success] = "注文がキャンセルされました。"
+    #### TODO: 注文履歴のページが作成されたらリダイレクト先に注文履歴ページのパスを指定する ####
+    redirect_to root_path
+  end
 end
