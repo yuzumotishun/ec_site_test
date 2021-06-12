@@ -14,14 +14,12 @@
         <div class="product-price">
           <div class="price">価格 : <span><%= @product.price %>円</span></div>
         </div>
-        <%#### 後でカートに商品情報を入れるというPOSTリクエストを飛ばすようにする ####%>
           <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
             <%= f.label :quantity, "購入個数", class: "pur-number-box"%>>
             <%= f.number_field :quantity, min: 1, class: "pur-number" %>>
             <%= hidden_field_tag :product_id, @product.id %>
             <%= f.submit "カートへ", class: "cart-button" %>>
           <% end %>
-        <%#### ここまで ####%>
       </div>
     </section>
   <% else %>
@@ -29,8 +27,7 @@
       <div class="not-find-box" style="text-align: center;">
         <div class="nf-message">該当商品が見つかりませんでした…</div>
         <div class="nf-sub-message">商品検索画面に戻り、やり直してください</div>
-        <%##### 商品検索画面が出来たら、product_pathを変更 #####%>
-        <%# link_to "商品検索画面" product_path, class: "product-search-button" %>
+        <%= link_to "商品検索画面", products_path, class: "product-search-button" %>
       </div>
     </section>
   <% end %>
