@@ -307,8 +307,92 @@ Purchase.create!(
 order1 = user1.orders.create!(
   order_number: "8418240123",
 )
-order2 = user2.orders.create!(
+order2 = user1.orders.create!(
   order_number: "6651972394",
+)
+order3 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order4 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order5 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order6 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order7 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order8 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order9 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order10 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order11 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order12 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order13 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order14 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order15 = user1.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order16 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order17 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order18 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order19 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order20 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order21 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order22 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order23 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order24 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order25 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order26 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order27 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order28 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order29 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
+)
+order30 = user2.orders.create!(
+  order_number: rand(9999999999).to_s,
 )
 ##########################################
 # ShipmentStatusの作成

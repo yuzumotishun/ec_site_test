@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :correct_users_order, only: [:show]
 
   def index
-    @orders = Order.where(user_id: current_user.id).page(params[:page]).per(2)
+    @orders = Order.where(user_id: current_user.id).page(params[:page]).per(10)
   end
 
   def show
