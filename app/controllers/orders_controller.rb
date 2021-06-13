@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_action :correct_users_order, only: [:show]
 
+  def index
+    @orders = current_user.orders.page(params[:page]).per(15)
+  end
+
   def show
     @order = Order.find_by(id: params[:id])
   end

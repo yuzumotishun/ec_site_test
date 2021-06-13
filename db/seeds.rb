@@ -310,6 +310,16 @@ order1 = user1.orders.create!(
 order2 = user2.orders.create!(
   order_number: "6651972394",
 )
+20.times do
+  user1.orders.create!(
+    order_number: rand(9_999_999_999).to_s,
+  )
+end
+20.times do
+  user2.orders.create!(
+    order_number: rand(9_999_999_999).to_s,
+  )
+end
 ##########################################
 # ShipmentStatusの作成
 ##########################################
