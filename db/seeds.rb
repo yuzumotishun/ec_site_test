@@ -37,7 +37,7 @@ user2 = User.create!(
   delete_flag: false,
 )
 ##########################################
-# Productの作成
+# Categoryの作成
 ##########################################
 category1 = Category.create!(category_name: "食料品")
 category2 = Category.create!(category_name: "生活雑貨")
