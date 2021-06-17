@@ -1,0 +1,72 @@
+.products-show {
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+.product-detail {
+  padding: 0 60px;
+}
+.product-infomation {
+  text-align: center;
+  .info {
+    margin-bottom: 20px;
+  }
+  .name {
+    font-size: 22px;
+  }
+  .category {
+    text-align: end;
+    font-size: 18px;
+  }
+}
+.product-description {
+  font-size: 18px;
+}
+.product-price {
+  font-size: 18px;
+  .price {
+    line-height: 80px;
+    margin-bottom: 30px;
+  }
+}
+.product-purchase {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 36px;
+  .pur-number-box {
+    padding-right: 20px;
+    .pur-number {
+      width: 36px;
+      height: 36px;
+      text-align: center;
+    }
+  }
+  .cart-button {
+    background-color: rgb(68, 115, 196);
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 0 15px;
+  }
+}
+// ###### 該当IDが存在しなかった場合のshow ########
+// ####### not-find-box ######
+.not-find-box {
+  .nf-message {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+  .nf-sub-message {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .product-search-button {
+    background-color: rgb(68, 115, 196);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: #ffffff;
+  }
+}

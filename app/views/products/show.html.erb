@@ -1,0 +1,34 @@
+<main>
+  <% if @product %>
+    <section>
+      <div class="product-detail">
+        <div class="product-infomation">
+          <h2 class="info">商品情報</h2>
+          <div class="name"><%= @product.product_name %></div>
+          <div class="category">カテゴリ: <%= @product.category.category_name %></div>
+        </div>
+        <div class="product-description">
+          <div class="desc">商品説明</div>
+          <div class="desc-body"><%= @product.description %></div>
+        </div>
+        <div class="product-price">
+          <div class="price">価格 : <span><%= @product.price %>円</span></div>
+        </div>
+          <%= form_with url: carts_add_cart_path, method: :post, local: true do |f| %>
+            <%= f.label :quantity, "購入個数", class: "pur-number-box"%>>
+            <%= f.number_field :quantity, min: 1, class: "pur-number" %>>
+            <%= hidden_field_tag :product_id, @product.id %>
+            <%= f.submit "カートへ", class: "cart-button" %>>
+          <% end %>
+      </div>
+    </section>
+  <% else %>
+    <section>
+      <div class="not-find-box" style="text-align: center;">
+        <div class="nf-message">該当商品が見つかりませんでした…</div>
+        <div class="nf-sub-message">商品検索画面に戻り、やり直してください</div>
+        <%= link_to "商品検索画面", products_path, class: "product-search-button" %>
+      </div>
+    </section>
+  <% end %>
+</main>

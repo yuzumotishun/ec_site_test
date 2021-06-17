@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    models:
+      user: #ユーザモデル
+    attributes:
+      user:
+        password: パスワード
+        last_name: 姓
+        first_name: 名
+        zipcode: 郵便番号
+        prefecture: 都道府県
+        municipality: 市町村区
+        address: 番地
+        apartments: マンション、部屋番号
+        email: メールアドレス
+        phone_number: 電話番号
+        user_classification_id: ユーザ種別
+        company_name: 会社名
+        delete_flag: 削除フラグ
+  # 全てのmodelで共通して使用する可能性のあるattributesを定義
+  attributes:
+    user_classification: ユーザ種別
+    created_at: 作成日
+    updated_at: 更新日
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "« 前"
+      next: "次 »"
+      truncate: "..."
