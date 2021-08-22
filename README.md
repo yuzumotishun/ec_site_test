@@ -1,16 +1,9 @@
-# Rails共同開発講座
+# EC_site_portfolio
 
 ## Member
-- 氏名: Tatty
-  - 好きなメソッド: map
-- 氏名: ハマベ
-  - 好きなメソッド: each
-- 氏名: サッシュン
+- 氏名: shun
   - 好きなメソッド: gets
-- 氏名: タクロウ
-  - 好きなメソッド: each
-- 氏名: オオタ
-  - 好きなメソッド: Hash#slice
+
 
 
 ---
