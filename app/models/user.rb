@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   belongs_to :user_classification
   has_secure_password
+  mount_uploader :image, ImageUploader
 
   # ハイフンあり、7桁の整数
   VALID_ZIPCODE_REGEX = /\A\d{3}-\d{4}\z/.freeze

@@ -5,22 +5,27 @@
         <h1><%= link_to "探求学園Rails専攻", root_path, class: "nav-link navbar-brand"%></h1>
       </div>
       <div>
-        <ul>
-          <% if logged_in? %>
-            <p><%= current_user.last_name %> <%= current_user.first_name %> さん</p>
-          <% end %>
+        <div class user_icon>
+          <ul>
+            <% if logged_in? %>
+            <p><%= current_user.last_name %> <%= current_user.first_name %> さん </p>
+            <% if current_user.image? %>
+            <%= image_tag current_user.image.thumb.url %>
+            <% end %>
+            <% end %>
+        </div>
         </ul>
         <ul class="navbar-nav">
           <% if logged_in? %>
-            <%= link_to "商品検索", products_path, class: "nav-link text-dark"%>
-            <%= link_to "カート", carts_show_path, class: "nav-link text-dark"%>
-            <%= link_to "注文履歴", orders_path, class: "nav-link text-dark"%>
-            <%= link_to "ユーザ情報", user_path(current_user.id), class: "nav-link text-dark"%>
-            <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
+          <%= link_to "商品検索", products_path, class: "nav-link text-dark"%>
+          <%= link_to "カート", carts_show_path, class: "nav-link text-dark"%>
+          <%= link_to "注文履歴", orders_path, class: "nav-link text-dark"%>
+          <%= link_to "ユーザ情報", user_path(current_user.id), class: "nav-link text-dark"%>
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
           <% else %>
-            <%= link_to "新規登録", signup_path, class: "nav-link text-dark" %>
-            <%= link_to "ログイン", login_path, class: "nav-link text-dark" %>
-            <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: "nav-link text-dark" %>
+          <%= link_to "新規登録", signup_path, class: "nav-link text-dark" %>
+          <%= link_to "ログイン", login_path, class: "nav-link text-dark" %>
+          <%= link_to 'ゲストログイン', guest_login_path, method: :post, class: "nav-link text-dark" %>
           <% end %>
         </ul>
       </div>

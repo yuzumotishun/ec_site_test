@@ -7,6 +7,8 @@ ruby '2.7.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.6'
 gem 'bootstrap', '5.0.0.beta3'
 gem 'bcrypt', '3.1.13'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'rails-i18n'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
