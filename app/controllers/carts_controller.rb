@@ -19,8 +19,13 @@ class CartsController < ApplicationController
   end
 
   def add_cart
-    # session内の商品の有無で条件分岐
+    # 個数が0このまま入力されている商品を弾く。
     if session[:cart].blank?
+      if params["quantity"].blank?
+        flash[:danger] = "商品をカートに追加できませんでした。個数を入力してください"
+        return redirect_to product_path(id: params[:product_id])
+      end
+      # session内の商品の有無で条件分岐
       # 商品が入っていない場合
       session[:cart] = [{ product_id: params["product_id"], quantity: params["quantity"].to_i }]
       return redirect_to carts_show_path
