@@ -5,6 +5,11 @@
       <table class="table">
         <tbody>
           <tr>
+            <% if @user.image? %>
+            <%= image_tag @user.image.url %>
+            <% end %>
+          </tr>
+          <tr>
             <td class="text-center" style="width:20%">ユーザID</td>
             <td style="width:80%"><%= @user.id %></td>
           </tr>
