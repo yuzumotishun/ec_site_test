@@ -9,40 +9,59 @@ body {
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ,
     Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, sans-serif;
 }
+
 header {
   background-color: #ffe040;
   z-index: 10;
   /* 要素の重なり順序指定 */
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+
 }
+
 header h1 {
   font-weight: bold;
 }
+
 header a {
   font-weight: bold;
   padding-left: 8px;
 }
+
 header p {
   text-align: right;
+  padding: 0rem 1rem;
+  margin-bottom: 0 !important;
 }
+
 header li {
   list-style: none;
 }
+
 main {
   background: #ffffff;
   flex: 1;
   /* header footerの高さを除いた、残りの部分がmainで埋まる */
 }
+
 footer {
   width: 100%;
   background-color: #ffe040;
-  position: relative;;
+  position: relative;
+  ;
   bottom: 0;
 }
+
 footer h1 {
   font-size: 15px;
   font-weight: bold;
   margin: 8px 5px;
 }
+
 footer p {
   text-align: right;
   font-weight: lighter;
